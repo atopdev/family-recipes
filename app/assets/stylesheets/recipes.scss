@@ -1,0 +1,105 @@
+// Place all the styles related to the Recipes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.recipe_list {
+  width: 100%;
+  td {
+    padding-right: 50px;
+  }
+}
+
+.new_recipe_btn {
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid #cc580c;
+  border-radius: 3px;
+  padding: 3px;
+    &:hover {
+      background-color: #cc580c;
+      color: white;
+    }
+}
+
+.white {
+  margin-top: 25px;
+  color: #ccc;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+#rate {
+  border: 2px solid rgba(218,165,32,0.9);
+  background-color: rgba(218,165,32,0.6);
+  border-radius: 80%;
+  width: 4%;
+  margin: 0 auto 10px auto;
+}
+
+.show {
+  margin-right:5px;
+  height:450px;
+}
+
+.tagandrate {
+  height: 450px;
+}
+
+input[type="submit"] {
+  font-size: 12px;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid #cc580c;
+  border-radius: 3px;
+  padding: 1px 6px;
+  background-color: white;
+  color: #cc580c;
+    &:hover {
+      background-color: #cc580c;
+      color: white;
+    }
+}
+
+#googleMap {
+  margin: 0 35%;
+}
+
+div#user_nav {
+  background-color: #000;
+  a:hover {
+      color: white;
+  }
+}
+
+input.search {
+  font-size: 12px;
+  margin: 0 auto 0 5px;
+  text-align: center;
+  border: 1px solid #cc580c;
+  border-radius: 3px;
+  padding: 1px 6px;
+  background-color: #cc580c;
+  color: #fff;
+    &:hover {
+      background-color: #fff;
+      color: #cc580c;
+    }
+}
+
+input#word_search_input, input#tag_search_input {
+  text-align: left;
+  border-radius: 2px;
+  line-height: 1px;
+  background-color: transparent;
+}
+
+.tag_image img {
+  width: 255px;
+  height: 160px;
+  overflow: hidden;
+}
+
+.grid-wrap figcaption {
+  height: 100px;
+  overflow:hidden;
+}

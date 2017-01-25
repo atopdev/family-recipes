@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Recipes</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+  <!--Javascripts-->
+  <script crc="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="http://maps.googleapis.com/maps/api/js"></script>
+</head>
+<body>
+
+
+
+  <!--wrapper start-->
+  <div class="wrapper" id="wrapper">
+    <div id="user_nav">
+      <% if user_signed_in? %>
+        <%= image_tag current_user.image.url(:small) %>
+        Logged in as <strong><%= current_user.email %></strong>
+        <%= link_to 'Edit Profile', edit_user_registration_path %> |
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Sign Up", new_user_registration_path %> |
+        <%= link_to "Login", new_user_session_path %>
+      <% end %>
+    </div>
+
+    <%= yield %>
+  </div>
+
+  <p class="notice"><%= notice %></p>
+   <p class="alert"><%= alert %></p>
+
+</body>
+</html>

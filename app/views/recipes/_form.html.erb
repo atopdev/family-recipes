@@ -1,0 +1,69 @@
+<%= form_for @recipe, html: { multipart: true } do |f| %>
+  <% if @recipe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+
+      <ul>
+      <% @recipe.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :author %><br>
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :ingredients %><br>
+    <%= f.text_area :ingredients %>
+  </div>
+  <div class="field">
+    <%= f.label :instructions %><br>
+    <%= f.text_area :instructions %>
+  </div>
+  <div class="field">
+    <%= f.label "Add Image" %><br>
+    <%= f.file_field :image %>
+  </div>
+  <p>
+    <strong>Image:</strong>
+    <%= image_tag(@recipe.image.url(:med), alt: "Upload Image") %>
+  </p>
+
+
+  <h2>Edit Tags</h2>
+  <%= f.fields_for :tags do |tag| %>
+    <div class="tag_fields">
+      <div class="field">
+        <%= tag.text_field :name %>
+        <%= tag.check_box :_destroy %>
+        <%= tag.label :_destroy, 'remove' %>
+      </div>
+    </div>
+    <% end %>
+
+    <h2>Edit Ratings</h2>
+    <%= f.fields_for :ratings do |rating| %>
+      <div class="rating_fields">
+        <div class="field">
+          <%= rating.label :rate %><br>
+          <%= rating.number_field :rate, in: 1...6 %>
+          <%= rating.check_box :_destroy %>
+          <%= rating.label :_destroy, 'remove' %>
+        </div>
+      </div>
+    <% end %>
+
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+
+<% end %>

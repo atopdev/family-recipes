@@ -5,9 +5,10 @@ Description: This application will serve as a way to post recipes and share them
 ## Installation
 
 TODO:
-	1. Ruby 2.2.2
-	2. Rails 4.2.4
-	3. Bundle Install
+
+1. Ruby 2.2.2
+2. Rails 4.2.4
+3. Bundle Install
 
 ## Usage
 
